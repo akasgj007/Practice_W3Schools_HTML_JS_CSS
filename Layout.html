@@ -1,0 +1,198 @@
+<html>
+    <head>
+        <title>Layout Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+
+            body{
+                font-family: 'Courier New', Courier, monospace;
+                height: 95vh;
+            }
+
+            header{
+                background-color: green ;
+                padding: 30px;
+                height: 30vh;
+                text-align: center;
+                color: white;
+                font-size: 35px;
+            }
+
+            header h2{
+                text-transform: uppercase;
+                font-weight: 900;
+            }
+
+            nav{
+                float: left;
+                width: 30%;
+                padding: 20px;
+            }
+
+            nav ul{
+                list-style-type: none;
+                padding: 0;
+                line-height: 50px;
+            }
+
+            nav ul li span{
+                font-weight: bold;
+                color: white;
+            }
+
+            nav ul li a{
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+            }
+
+            article{
+                float: left;
+                width: 70%;
+                padding: 20px;
+                background-color: #fff;
+                color: black;
+                height: 62vh;
+            }
+
+            article h1{
+                color: blue;
+            }
+
+            aside {
+                width: 30%;
+                padding-left: 15px;
+                margin-left: 15px;
+                float: right;
+            }
+
+            aside img{
+                border-radius: 5%;
+            }
+            
+
+            footer{
+                background-color: #777;
+                padding: 10px;
+                text-align: center;
+                color: black;
+            }
+
+            @media (max-width: 768px) {
+                nav,article{
+                    width: 100%;
+                    height: auto;
+                }
+
+                nav ul{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        </style>
+        <script>
+            function selectCity(cityNumber){
+                if(cityNumber == 1){
+                    document.getElementById("chennai").style.display = "block";
+                    document.getElementById("madurai").style.display = "none";
+                    document.getElementById("coimbatore").style.display = "none";
+                }
+                else if(cityNumber == 2){
+                    document.getElementById("chennai").style.display = "none";
+                    document.getElementById("madurai").style.display = "block";
+                    document.getElementById("coimbatore").style.display = "none";
+                }
+                else{
+                    document.getElementById("chennai").style.display = "none";
+                    document.getElementById("madurai").style.display = "none";
+                    document.getElementById("coimbatore").style.display = "block";
+                }
+            }
+            
+            function playPause(id) {
+                var myVideo = document.getElementById(id);
+                if(myVideo.paused){
+                    myVideo.play();
+                }
+                else{
+                    myVideo.pause();
+                }
+            }
+        </script>
+    </head>
+    <body>
+       
+        <header>
+            <marquee behavior="alternate" direction="rtl">
+            <h2>Cities of tamilnadu</h2>
+        
+        </marquee> </header>      
+        <section>
+            <nav>
+                <ul>
+                    <li><span onclick="selectCity(1)">Chennai</span></li>
+                    <li><span onclick="selectCity(2)">Madurai</span></li>
+                    <li><span onclick="selectCity(3)">Coimbatore</span></li>
+                    <li><a href="file:///C:/Users/akasg/OneDrive/Documents/Coding/HTML/Practice_W3Schools/DragAndDrop.html">Drag and Drop Game</a></li>
+                </ul>
+            </nav>
+            <article id="chennai">
+                <h1>Chennai</h1>
+                <p>Chennai, on the Bay of Bengal in eastern India, is the capital of the state of Tamil Nadu. The city is home to Fort 
+                    St. George, built in 1644 and now a museum showcasing the city's
+                     roots as a British military garrison and East India Company trading outpost, when it was called Madras. </p>
+                     <aside>
+                        <img src="file:///C:/Users/akasg/OneDrive/Documents/Coding/HTML/Practice_W3Schools/Images/chennai.jpeg" alt="chennai_court" width="300" height="200"/>
+                    </aside>
+                    <p>Religious sites include Kapaleeshwarar Temple, adorned with carved and painted gods, and St. Mary's, a 17th-century Anglican church.</p>
+                    <div>
+                        
+                        <img  onclick="playPause('chennaiVideo')" src="file:///C:/Users/akasg/OneDrive/Documents/Coding/HTML/Practice_W3Schools/Images/pauseplayicon.png" 
+                        width="30" height="30"
+                        alt="pauseicon">
+                        
+                        <video width="380" id="chennaiVideo">
+                            <source src="file:///C:/Users/akasg/OneDrive/Documents/Coding/HTML/Practice_W3Schools/Images/Chennai.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </article>
+            <article id="madurai" style="display: none;">
+                <h1>Madurai</h1>
+                <p>Madurai is an energetic, ancient city on the Vaigai River in the South Indian state of Tamil Nadu. 
+                    Its skyline is dominated by the 14 colorful gopurams (gateway towers) of Meenakshi Amman Temple. </p>
+                    <aside>
+                        <img src="file:///C:/Users/akasg/OneDrive/Documents/Coding/HTML/Practice_W3Schools/Images/madurai.jpg" alt="madurai_city" width="300" height="200"/>
+                    </aside>
+                    <p>Covered in bright carvings of Hindu gods, the Dravidian-style temple is a major pilgrimage site.
+                     Millions attend the processions and ceremonies of April's Chithirai Festival celebrating Meenakshi and Lord Vishnu.</p>
+                     <iframe width="420" height="215" src="https://www.youtube.com/embed/eehISH4VfTQ?playlist=eehISH4VfTQ&controls=1&si=RK_6mGcID_102py3&autoplay=1&mute=1&loop=1" 
+                     title="YouTube video player" frameborder="0" 
+                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                     allowfullscreen></iframe>
+            </article>
+            <article id="coimbatore" style="display: none;">
+                <h1>Coimbatore</h1>
+                <p>Coimbatore is a city in the south Indian state of Tamil Nadu. To the northwest 
+                    is the centuries-old, Dravidian-style Arulmigu Subramaniyaswami Temple, Marudamalai.</p>
+                    <aside>
+                        <img src="file:///C:/Users/akasg/OneDrive/Documents/Coding/HTML/Practice_W3Schools/Images/coimbatore.jpg" alt="coimbatore" width="300" height="200"/>
+                    </aside>
+                    <p>The colorful and intricately carved Arulmigu Patteeswarar Swamy 
+                        Temple lies southeast of here. In the center, the Gass Forest Museum has a huge collection of preserved
+                         animals and tree trunks. Southeast, birds and butterflies inhabit Singanallur Lake</p>
+            </article>
+
+            
+        </section> 
+        
+        <footer>
+            <p>&#169 to <kdb>G.J.</kdb>Akash <span>&#128536;</span></p>
+        </footer>
+    </body>
+</html>
